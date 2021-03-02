@@ -1,3 +1,11 @@
-main {
-  background-color: red;
+/* Requirement 1: All text on the pages should use a sans-serif font family. */
+* {
+    font-family: sans-serif;
+}
+
+/* Requirement 2: The pages should be 1024 pixels wide, and be centered on the
+   page, with equal margins to the left and right. */
+body {
+    width: 1024px;
+    margin: auto;
 }
