@@ -9,3 +9,26 @@ body {
     width: 1024px;
     margin: auto;
 }
+
+/* Requirement 3-PageHeader: Page header should contain site logo and nav links
+   in one row. Login nav link should be floated to the right of the page. */
+#page-header {
+    display: flex;
+    align-items: center; /* Vertically align logo and nav links */
+}
+
+/* Make nav area take up all available space. Needed for floating login nav link
+   to the right. */
+nav {
+    flex-grow: 1;
+}
+
+/* Display nav links in one row. */
+nav ul li {
+    display: inline;
+}
+
+.right-navlink {
+    float: right;
+}
+/* END OF Requirement 3 */

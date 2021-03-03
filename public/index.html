@@ -3,29 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>A site about something</title>
+    <!-- CHANGE # 1-->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <header>
-        <figure>
-            <img src="/img/logo.svg" alt="Logo" width="300">
-        </figure>
+    <!--
+        CHANGE #3: Adds id to page header.
+        Reason: For css selector. I didn't want to select on just the `header`
+                tag, since those can be used on articles as well and I want to
+                specifically target only the page header.
+        See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
+    -->
+    <header id="page-header">
+        <img src="/img/logo.svg" alt="Logo" width="300">
         <nav>
             <ul>
-                <li>
-                    <a href="/">Home</a>
-                </li>
-                <li>
-                    <a href="#">News</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-            </ul>
-        </nav>
-        <nav>
-            <ul>
-                <li>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">About</a></li>
+                <!--
+                    CHANGE #2: Moves login nav link from separate <nav> into
+                               same <nav> as rest of nav links.
+                    Reason: Easier to align nav links vertically.
+                -->
+                <li class="right-navlink">
                     <a href="/html/login.html">Login</a>
                 </li>
             </ul>
