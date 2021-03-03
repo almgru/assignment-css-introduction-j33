@@ -15,7 +15,14 @@
         See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
     -->
     <header id="page-header">
-        <img src="/img/logo.svg" alt="Logo" width="300">
+        <!--
+            CHANGE #4: Remove <figure> wrapper from img.
+            Reason: Not needed since no caption is used for the logo.
+
+            CHANGE #5: Changed width=300 to height=60.
+            Reason: To make it easier to make logo and nav links the same height
+        -->
+        <img src="/img/logo.svg" alt="Logo" height="60">
         <nav>
             <ul>
                 <li><a href="/">Home</a></li>
@@ -91,43 +98,25 @@
             <li>
                 <h3>Iceland</h3>
                 <ol>
-                    <li>
-                        <p>Reykjavík Pop. 129 000</p>
-                    </li>
-                    <li>
-                        <p>Kópavogur Pop. 37 000</p>
-                    </li>
-                    <li>
-                        <p>Hafnarfjörður Pop. 30 000</p>
-                    </li>
+                    <li><p>Reykjavík Pop. 129 000</p></li>
+                    <li><p>Kópavogur Pop. 37 000</p></li>
+                    <li><p>Hafnarfjörður Pop. 30 000</p></li>
                 </ol>
             </li>
             <li>
                 <h3>Taiwan</h3>
                 <ol>
-                    <li>
-                        <p>New Taipei Pop. 4 000 000</p>
-                    </li>
-                    <li>
-                        <p>Taichung Pop. 2 800 000</p>
-                    </li>
-                    <li>
-                        <p>Kaohsiung Pop. 2 770 000</p>
-                    </li>
+                    <li><p>New Taipei Pop. 4 000 000</p></li>
+                    <li><p>Taichung Pop. 2 800 000</p></li>
+                    <li><p>Kaohsiung Pop. 2 770 000</p></li>
                 </ol>
             </li>
             <li>
                 <h3>Jamaica</h3>
                 <ol>
-                    <li>
-                        <p>Kingston Pop. 660 000</p>
-                    </li>
-                    <li>
-                        <p>Portmore Pop. 180 000</p>
-                    </li>
-                    <li>
-                        <p>Spanish Town Pop. 150 000</p>
-                    </li>
+                    <li><p>Kingston Pop. 660 000</p></li>
+                    <li><p>Portmore Pop. 180 000</p></li>
+                    <li><p>Spanish Town Pop. 150 000</p></li>
                 </ol>
             </li>
         </ul>

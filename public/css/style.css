@@ -2,6 +2,7 @@
 * {
     font-family: sans-serif;
 }
+/* END OF Requirement 1 */
 
 /* Requirement 2: The pages should be 1024 pixels wide, and be centered on the
    page, with equal margins to the left and right. */
@@ -9,26 +10,50 @@ body {
     width: 1024px;
     margin: auto;
 }
+/* END OF Requirement 2 */
 
 /* Requirement 3-PageHeader: Page header should contain site logo and nav links
    in one row. Login nav link should be floated to the right of the page. */
+
+/* The solution for the page header makes use of two flexboxes. First, it
+   subdivides the header into a flexbox row container which contains the logo on
+   the left and the navigation bar to the right. Then, it subdivides the
+   navigation bar into a flexbox row container containing the navigation links.
+   Since `float` does not work with flexbox, it uses margin-left on the
+   rightmost nav link to "push" it out to the right. */
+
+/* First, outer, flex container for the logo and the navigation bar. */
 #page-header {
     display: flex;
-    align-items: center; /* Vertically align logo and nav links */
+    flex-direction: row;
 }
 
-/* Make nav area take up all available space. Needed for floating login nav link
-   to the right. */
+/* Make the nav take up all available horizontal space. Needed in order to make
+   the rightmost nav link be positioned to the right of the page. */
 nav {
     flex-grow: 1;
 }
 
-/* Display nav links in one row. */
-nav ul li {
-    display: inline;
+/* Second, inner, flex container for the navigation links. */
+nav ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0; /* For aligning ul vertically with logo. */
+    padding: 0; /* For "pushing" navigation bar up against the logo. */
 }
 
+nav ul li {
+    width: 100px; /* Make all nav links the same width. */
+    text-align: center; /* Align text horizontally. */
+    line-height: 60px; /* Align text vertically. */
+
+    /* TODO: change to a nicer color. */
+    background-color: yellow;
+}
+
+/* Since float does not work with flexbox, use margin-left to achieve a similar
+   effect. */
 .right-navlink {
-    float: right;
+    margin-left: auto;
 }
 /* END OF Requirement 3 */
