@@ -1,4 +1,4 @@
-/* TODO: Add note explaining why I prefer to select on ids over classes. */
+/* TODO: Add note explaining why I'm avoiding classes */
 
 /* Requirement 1: All text on the pages should use a sans-serif font family. */
 * {
@@ -25,7 +25,7 @@ body {
    rightmost nav link to "push" it out to the right. */
 
 /* First, outer, flex container for the logo and the navigation bar. */
-#page-header {
+body > header {
     display: flex;
     flex-direction: row;
 }
@@ -44,41 +44,63 @@ nav ul {
     padding: 0; /* For "pushing" navigation bar up against the logo. */
 }
 
-nav ul li {
+nav > ul > li {
     width: 100px; /* Make all nav links the same width. */
     text-align: center; /* Align text horizontally. */
     line-height: 60px; /* Align text vertically. */
-
-    /* TODO: change to a nicer color. */
-    background-color: yellow;
 }
 
 /* Since float does not work with flexbox, use margin-left to achieve a similar
    effect. */
-.right-navlink {
+nav > ul > li:last-child {
     margin-left: auto;
 }
 /* END OF Requirement 3-PageHeader */
 
-/*
-    Requirement 3-Columns: Index page should be segmented into two columns with
-    main content on the left and aside content on the right. The left column
-    should be twice as wide as the right column.
- */
+/* Requirement 3-Columns: Index page should be segmented into two columns with
+   main content on the left and aside content on the right. The left column
+   should be twice as wide as the right column. */
 
-/* Flexbox container for the two columns. */
-#column-container {
+/* Flexbox container for the two columns. This class is also used to create the
+   two article columns, see Requirement 3-TextColumns. */
+.column-container {
     display: flex;
 }
 
-/* Left column, should take up twice the width of the right column. */
-#left-column {
-    flex: 2;
-}
-
-/* Right column, should take up half the width of the left column. */
-#right-column {
+/* By default, all direct children of .column-container should have a relative
+   size of 1. */
+.column-container > * {
     flex: 1;
 }
 
+/* Left column, should take up twice the width of default columns. */
+.column-container > main {
+    flex: 2;
+}
+
 /* END OF Requirement 3-Columns */
+
+/* Temporary colors */
+nav {
+    background: lightcyan;
+}
+
+nav ul li {
+    background-color: yellow;
+}
+
+aside {
+    background-color: lavender;
+}
+
+main {
+    background-color: lightskyblue;
+}
+
+body > footer {
+    background-color: antiquewhite;
+}
+
+.column-container > article {
+    background-color: greenyellow;
+}

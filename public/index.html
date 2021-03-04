@@ -3,24 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>A site about something</title>
-    <!-- CHANGE # 1-->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css"> <!-- ADDED -->
 </head>
 
 <body>
-    <!--
-        CHANGE #3: Adds id to page header.
-        Reason: For css selector. I didn't want to select on just the `header`
-                tag, since those can be used on articles as well and I want to
-                specifically target only the page header.
-        See: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header
-    -->
-    <header id="page-header">
+    <header>
         <!--
-            CHANGE #4: Remove <figure> wrapper from img.
+            CHANGE: Remove <figure> wrapper from img.
             Reason: Not needed since no caption is used for the logo.
 
-            CHANGE #5: Changed width=300 to height=60.
+            CHANGE: Changed width=300 to height=60.
             Reason: To make it easier to make logo and nav links the same height
         -->
         <img src="/img/logo.svg" alt="Logo" height="60">
@@ -30,26 +22,19 @@
                 <li><a href="#">News</a></li>
                 <li><a href="#">About</a></li>
                 <!--
-                    CHANGE #2: Moves login nav link from separate <nav> into
-                               same <nav> as rest of nav links.
+                    CHANGE: Moves login nav link from separate <nav> into same
+                            <nav> as rest of nav links.
                     Reason: Easier to align nav links vertically.
                 -->
-                <li class="right-navlink">
-                    <a href="/html/login.html">Login</a>
-                </li>
+                <li><a href="/html/login.html">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <!--
-        CHANGE #6: Adds container for left and right columns.
-        Reason: To be able to segment page into left and right content.
-    -->
-    <div id="column-container">
-        <!--
-            CHANGE #7: Adds 
-        -->
-        <main id="left-column">
+    <!-- CHANGE: Adds container for left and right columns. -->
+    <div class="column-container">
+
+        <main>
             <h2>Home</h2>
 
             <p>
@@ -62,65 +47,85 @@
                 vel ligula tempus, dictum eros non, facilisis magna.
             </p>
 
-            <article>
-                <h3>Nullam lorem justo</h3>
+            <!-- CHANGE: Adds container for left and right article columns. -->
+            <div class="column-container">
+                <article>
+                    <h3>Nullam lorem justo</h3>
 
-                <p>
-                    Nullam lorem justo, sodales non commodo eget, tristique
-                    ac sem. Cras ut dolor velit. Phasellus dictum urna
-                    turpis, sed sodales nibh tristique id. Etiam placerat
-                    posuere dapibus. Cras elementum leo ex, quis mattis dolor
-                    euismod at. Aenean sapien erat, bibendum eu dictum sed,
-                    consequat vitae purus. Fusce luctus sodales fringilla.
-                    Vivamus sit amet felis rutrum, gravida eros vel, posuere
-                    est. Phasellus luctus, nisl id tristique lobortis, leo mi
-                    maximus enim, non dapibus metus quam nec tellus. Nam sed
-                    massa quam.</p> <p>Aenean quis orci elementum, vestibulum
-                    magna sit amet, pharetra lacus. Sed dui eros, ultrices id
-                    nisl a, pharetra elementum nibh. Vivamus tristique tortor
-                    ipsum, non lacinia arcu maximus iaculis. Class aptent
-                    taciti sociosqu ad litora torquent per conubia nostra,
-                    per inceptos himenaeos. Suspendisse potenti. Duis
-                    faucibus id eros euismod convallis. Nunc id est auctor,
-                    sodales ante a, ullamcorper nunc.
-                </p>
-            </article>
+                    <p>
+                        Nullam lorem justo, sodales non commodo eget,
+                        tristique ac sem. Cras ut dolor velit. Phasellus
+                        dictum urna turpis, sed sodales nibh tristique id.
+                        Etiam placerat posuere dapibus. Cras elementum leo
+                        ex, quis mattis dolor euismod at. Aenean sapien erat,
+                        bibendum eu dictum sed, consequat vitae purus. Fusce
+                        luctus sodales fringilla. Vivamus sit amet felis
+                        rutrum, gravida eros vel, posuere est. Phasellus
+                        luctus, nisl id tristique lobortis, leo mi maximus
+                        enim, non dapibus metus quam nec tellus. Nam sed
+                        massa quam.
+                    </p>
 
-            <article>
-                <h3>Praesent</h3>
+                    <p>
+                        Aenean quis orci elementum, vestibulum magna sit
+                        amet, pharetra lacus. Sed dui eros, ultrices id nisl
+                        a, pharetra elementum nibh. Vivamus tristique tortor
+                        ipsum, non lacinia arcu maximus iaculis. Class aptent
+                        taciti sociosqu ad litora torquent per conubia
+                        nostra, per inceptos himenaeos. Suspendisse potenti.
+                        Duis faucibus id eros euismod convallis. Nunc id est
+                        auctor, sodales ante a, ullamcorper nunc.
+                    </p>
+                </article>
 
-                <p>
-                    Praesent ac velit eu quam efficitur sagittis. Aliquam
-                    sagittis augue pulvinar purus hendrerit, vel vulputate
-                    nisl tempus. Nam sollicitudin, est ut fringilla maximus,
-                    enim arcu porta nunc, eu rutrum orci massa non dui. Sed
-                    fringilla vel libero nec placerat. Maecenas posuere sem a
-                    tellus interdum interdum. Aliquam quam felis, ullamcorper
-                    id porttitor at, lobortis ac felis. Vestibulum
-                    ullamcorper turpis a mi feugiat laoreet. Cras nisl lorem,
-                    pulvinar vel tempor pellentesque, placerat non est.</p>
-                    <p>Pellentesque sed pellentesque lacus. Morbi mollis
-                    eleifend justo eu pretium. Aenean volutpat tempus tortor
-                    id dapibus. Vestibulum imperdiet sit amet lectus placerat
-                    pulvinar. Mauris et sem lobortis lacus fringilla
-                    elementum finibus id augue. In at elit mauris. Nulla eget
-                    nulla at elit maximus tempor. Mauris ex purus, finibus
-                    iaculis fermentum bibendum, egestas in diam. Fusce in
-                    dictum justo. Pellentesque rutrum sapien vestibulum,
-                    finibus risus non, hendrerit enim.
-                </p>
+                <article>
+                    <h3>Praesent</h3>
 
-                <figure>
-                    <img src="/img/lorem-picsum.jpg" alt="Hillside by ocean.">
-                    <figcaption>
-                        Taken from <a href="https://picsum.photos">Lorem
-                        Picsum</a>. Credit: Stefan Kunze
-                    </figcaption>
-                </figure>
-            </article>
+                    <p>
+                        Praesent ac velit eu quam efficitur sagittis. Aliquam
+                        sagittis augue pulvinar purus hendrerit, vel
+                        vulputate nisl tempus. Nam sollicitudin, est ut
+                        fringilla maximus, enim arcu porta nunc, eu rutrum
+                        orci massa non dui. Sed fringilla vel libero nec
+                        placerat. Maecenas posuere sem a tellus interdum
+                        interdum. Aliquam quam felis, ullamcorper id
+                        porttitor at, lobortis ac felis. Vestibulum
+                        ullamcorper turpis a mi feugiat laoreet. Cras nisl
+                        lorem, pulvinar vel tempor pellentesque, placerat non
+                        est.
+                    </p>
+
+                    <p>
+                        Pellentesque sed pellentesque lacus. Morbi mollis
+                        eleifend justo eu pretium. Aenean volutpat tempus
+                        tortor id dapibus. Vestibulum imperdiet sit amet
+                        lectus placerat pulvinar. Mauris et sem lobortis
+                        lacus fringilla elementum finibus id augue. In at
+                        elit mauris. Nulla eget nulla at elit maximus tempor.
+                        Mauris ex purus, finibus iaculis fermentum bibendum,
+                        egestas in diam. Fusce in dictum justo. Pellentesque
+                        rutrum sapien vestibulum, finibus risus non,
+                        hendrerit enim.
+                    </p>
+
+                    <!--
+                        CHANGE: Sets width of image.
+                        Reason: To make article columns of equal width.
+                    -->
+                    <figure>
+                        <img src="/img/lorem-picsum.jpg"
+                             alt="Hillside by ocean."
+                             width=240>
+                        <figcaption>
+                            Taken from <a href="https://picsum.photos">Lorem
+                            Picsum</a>. Credit: Stefan Kunze
+                        </figcaption>
+                    </figure>
+                </article>
+            </div>
         </main>
 
-        <aside id="right-column">
+        <aside>
             <h2>Nations and cities</h2>
             <ul>
                 <li>
