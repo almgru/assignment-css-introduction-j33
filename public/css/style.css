@@ -1,3 +1,5 @@
+/* TODO: Add note explaining why I prefer to select on ids over classes. */
+
 /* Requirement 1: All text on the pages should use a sans-serif font family. */
 * {
     font-family: sans-serif;
@@ -56,4 +58,27 @@ nav ul li {
 .right-navlink {
     margin-left: auto;
 }
-/* END OF Requirement 3 */
+/* END OF Requirement 3-PageHeader */
+
+/*
+    Requirement 3-Columns: Index page should be segmented into two columns with
+    main content on the left and aside content on the right. The left column
+    should be twice as wide as the right column.
+ */
+
+/* Flexbox container for the two columns. */
+#column-container {
+    display: flex;
+}
+
+/* Left column, should take up twice the width of the right column. */
+#left-column {
+    flex: 2;
+}
+
+/* Right column, should take up half the width of the left column. */
+#right-column {
+    flex: 1;
+}
+
+/* END OF Requirement 3-Columns */
