@@ -77,8 +77,13 @@ nav > ul > li:last-child {
 .column-container > main {
     flex: 2;
 }
-
 /* END OF Requirement 3-Columns */
+
+/* Requirement 3-Footer: Text inside footer should be centered. */
+body > footer {
+    text-align: center;
+}
+/* END OF Requirement 3-Footer */
 
 /* Temporary colors */
 nav {
