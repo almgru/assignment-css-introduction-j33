@@ -85,6 +85,16 @@ article > figure {
 article > figure > img {
     width: 100%;
 }
+
+#form-container {
+    width: 67%;
+    margin: auto;
+}
+
+form > div {
+    float: right;
+}
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 /* PADDING AND MARGINS */
@@ -120,6 +130,10 @@ article {
 body > footer {
     padding: 10px 0;
     margin-top: 10px;
+}
+
+input {
+    margin-left: 5px;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
