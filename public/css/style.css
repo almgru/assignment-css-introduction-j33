@@ -85,6 +85,41 @@ body > footer {
 }
 /* END OF Requirement 3-Footer */
 
+/* Padding and margins */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Add some space between main content and aside content. */
+main {
+    margin-right: 10px;
+}
+
+/* Some space between header and content below. */
+body > header {
+    margin-bottom: 10px;
+}
+
+/* Remove default margin for page headings. Spacing is achieved with padding
+   instead. */
+h2 {
+    margin-top: 0;
+}
+
+/* Some space around the content in main and aside columns. */
+main,
+aside {
+    padding: 10px;
+}
+
+/* Some space between the article columns. */
+.column-container > article:first-child {
+    margin-right: 10px;
+}
+
+body > footer {
+    padding: 10px 0; /* Some space above and below the text in the footer. */
+    margin-top: 10px; /* Some space between footer and content above it. */
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
 /* Temporary colors */
 nav {
     background: lightcyan;
