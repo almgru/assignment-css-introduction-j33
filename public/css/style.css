@@ -1,161 +1,55 @@
-/* TODO: Add note explaining why I'm avoiding classes */
-
 /* FONTS */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
-
 * {
     font-family: sans-serif;
 }
-
-#form-container > h2 {
-    text-transform: uppercase;
-}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-/* LAYOUT */
+/* NAVIGATION */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
-
-body {
-    width: 1024px;
-    margin: auto;
-}
-
-/* The solution for the page header makes use of two flexboxes. First, it
-   subdivides the header into a flexbox row container which contains the logo on
-   the left and the navigation bar to the right. Then, it subdivides the
-   navigation bar into a flexbox row container containing the navigation links.
-   Since `float` does not work with flexbox, it uses margin-left on the
-   rightmost nav link to "push" it out to the right. */
-
-/* First, outer, flex container for the logo and the navigation bar. */
-body > header {
-    display: flex;
-    flex-direction: row;
-}
-
-/* Make the nav take up all available horizontal space. Needed in order to make
-   the rightmost nav link be positioned to the right of the page. */
 nav {
-    flex-grow: 1;
+    background: lightcyan;
 }
 
-/* Second, inner, flex container for the navigation links. */
-nav ul {
-    display: flex;
-    flex-direction: row;
-    margin: 0; /* For aligning ul vertically with logo. */
-    padding: 0; /* For "pushing" navigation bar up against the logo. */
-}
-
-nav > ul > li {
-    width: 100px; /* Make all nav links the same width. */
-    text-align: center; /* Align text horizontally. */
-    line-height: 60px; /* Align text vertically. */
-}
-
-/* Since float does not work with flexbox, use margin-left to achieve a similar
-   effect. */
-nav > ul > li:last-child {
-    margin-left: auto;
-}
-
-/* Flexbox container for the two columns. This class is also used to create the
-   two article columns. */
-.column-container {
-    display: flex;
-}
-
-/* By default, all direct children of .column-container should have a relative
-   size of 1. */
-.column-container > * {
-    flex: 1;
-}
-
-/* Left column, should take up twice the width of default columns. */
-.column-container > main {
-    flex: 2;
-}
-
-body > footer {
-    text-align: center;
-}
-
-/* Make article images take up all available space. */
-article > figure {
-    width: 100%;
-    margin: auto;
-}
-
-article > figure > img {
-    width: 100%;
-}
-
-#form-container {
-    width: 67%;
-    margin: auto;
-}
-
-form {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+nav ul li {
+    background-color: yellow;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-/* PADDING AND MARGINS */
+/* MAIN SECTION */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+main {
+    background-color: lightskyblue;
+}
+
+/* PARAGRAPHS */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+article {
+    background-color: greenyellow;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* ASIDE SECTION */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 aside {
-    margin-left: 10px;
-}
-
-body > header {
-    margin-bottom: 10px;
-}
-
-/* Remove default margin for page headings. Spacing is achieved with padding
-   instead. */
-h2,
-h3 {
-    margin-top: 0;
-}
-
-main,
-aside {
-    padding: 10px;
-}
-
-article {
-    padding: 5px;
-}
-
-.column-container > article:first-child {
-    margin-right: 10px;
-}
-
-body > footer {
-    padding: 10px 0;
-    margin-top: 10px;
-}
-
-input {
-    margin-left: 5px;
-}
-
-form {
-    padding: 10px;
+    background-color: lavender;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-/* BORDERS */
+/* FORMS */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 form {
     border: 1px solid black;
     border-radius: 5px;
 }
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+#form-container > h2 {
+    text-transform: uppercase;
+}
 
 /* BUTTONS */
-/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 input[type="submit"],
 input[type="reset"] {
     transition: 0.3s;
@@ -177,33 +71,6 @@ input[type="reset"]:hover {
     background-color: red;
     cursor: pointer;
 }
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
-
-/* COLORS */
-/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
-nav {
-    background: lightcyan;
-}
-
-nav ul li {
-    background-color: yellow;
-}
-
-aside {
-    background-color: lavender;
-}
-
-main {
-    background-color: lightskyblue;
-}
-
-body > footer {
-    background-color: antiquewhite;
-}
-
-.column-container > article {
-    background-color: greenyellow;
-}
 
 input[type="reset"] {
     background-color: coral;
@@ -211,5 +78,13 @@ input[type="reset"] {
 
 input[type="submit"] {
     background-color: lightgreen;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* PAGE FOOTER */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+body > footer {
+    background-color: antiquewhite;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
