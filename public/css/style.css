@@ -1,21 +1,20 @@
 /* TODO: Add note explaining why I'm avoiding classes */
 
-/* Requirement 1: All text on the pages should use a sans-serif font family. */
+/* FONTS */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
 * {
     font-family: sans-serif;
 }
-/* END OF Requirement 1 */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-/* Requirement 2: The pages should be 1024 pixels wide, and be centered on the
-   page, with equal margins to the left and right. */
+/* LAYOUT */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
 body {
     width: 1024px;
     margin: auto;
 }
-/* END OF Requirement 2 */
-
-/* Requirement 3-PageHeader: Page header should contain site logo and nav links
-   in one row. Login nav link should be floated to the right of the page. */
 
 /* The solution for the page header makes use of two flexboxes. First, it
    subdivides the header into a flexbox row container which contains the logo on
@@ -55,14 +54,9 @@ nav > ul > li {
 nav > ul > li:last-child {
     margin-left: auto;
 }
-/* END OF Requirement 3-PageHeader */
-
-/* Requirement 3-Columns: Index page should be segmented into two columns with
-   main content on the left and aside content on the right. The left column
-   should be twice as wide as the right column. */
 
 /* Flexbox container for the two columns. This class is also used to create the
-   two article columns, see Requirement 3-TextColumns. */
+   two article columns. */
 .column-container {
     display: flex;
 }
@@ -77,13 +71,10 @@ nav > ul > li:last-child {
 .column-container > main {
     flex: 2;
 }
-/* END OF Requirement 3-Columns */
 
-/* Requirement 3-Footer: Text inside footer should be centered. */
 body > footer {
     text-align: center;
 }
-/* END OF Requirement 3-Footer */
 
 /* Make article images take up all available space. */
 article > figure {
@@ -94,8 +85,9 @@ article > figure {
 article > figure > img {
     width: 100%;
 }
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-/* Padding and margins */
+/* PADDING AND MARGINS */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 aside {
     margin-left: 10px;
@@ -131,7 +123,8 @@ body > footer {
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
-/* Temporary colors */
+/* COLORS */
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 nav {
     background: lightcyan;
 }
@@ -155,3 +148,4 @@ body > footer {
 .column-container > article {
     background-color: greenyellow;
 }
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
