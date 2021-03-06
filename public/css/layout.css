@@ -39,6 +39,12 @@ nav > ul > li {
     line-height: 60px; /* Align text vertically. */
 }
 
+nav > ul > li > a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+}
+
 /* Since float does not work with flexbox, use margin-left to achieve a similar
    effect. */
 nav > ul > li:last-child {
