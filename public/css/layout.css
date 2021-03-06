@@ -136,6 +136,13 @@ input {
 form {
     padding: 10px;
 }
+
+input[type="submit"],
+input[type="reset"] {
+    box-sizing: border-box;
+    width: 65px;
+    height: 32px;
+}
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 /* PAGE FOOTER */
