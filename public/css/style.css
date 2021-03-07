@@ -19,6 +19,7 @@ body {
 body > header {
     display: flex;
     flex-direction: row;
+    height: 50px;
 }
 
 /* Make the nav take up all available horizontal space. Needed in order to make
@@ -38,7 +39,7 @@ nav ul {
 nav > ul > li {
     width: 100px; /* Make all nav links the same width. */
     text-align: center; /* Align text horizontally. */
-    line-height: 60px; /* Align text vertically. */
+    line-height: 50px; /* Align text vertically. */
 }
 
 nav > ul > li > a {
