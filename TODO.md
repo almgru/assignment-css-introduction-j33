@@ -5,4 +5,4 @@
         bold text, with a blue text color.
 -   [x] In the unordered list in the side content, items should appear in
         alternating colors (green and red, as a suggestion).
--   [ ] Comment CSS
+-   [x] Comment CSS

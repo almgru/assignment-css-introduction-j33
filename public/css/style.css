@@ -1,5 +1,12 @@
+/* NOTE: I avoided using ids and classes because I did not want to change the
+         HTML if it wasn't strictly necessary. I would probably not do this in
+         normal circumstances since it makes the css a bit harder to read. */
+
 /* LAYOUT */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+/* Requirement: The pages should be 1024 pixels wide, and be centered on the
+   page, with equal margins to the left and right. */
 body {
     width: 1024px;
     margin: auto; /* Center content horizontally. */
@@ -15,7 +22,12 @@ body {
    Since `float` does not work with flexbox, it uses margin-left on the
    rightmost nav link to "push" it out to the right. */
 
-/* First, outer, flex container for the logo and the navigation bar. */
+/* First, outer, flex container for the logo and the navigation bar.
+
+   NOTE: I prefer to use '>' to specify direct children because it is more
+         specific, I realize this makes the CSS more fragile to changes in the
+         HTML, but I feel that since I avoided using ids and classes it is
+         necessary to be specific to avoid unwanted elements being selected.  */
 body > header {
     display: flex;
     flex-direction: row;
@@ -42,8 +54,10 @@ nav > ul > li {
     line-height: 50px; /* Align text vertically. */
 }
 
+/* Make the links in the navlinks fill the parent so they behave more like
+   buttons, i.e. you can click outside the text to follow the link. */
 nav > ul > li > a {
-    display: inline-block;
+    display: inline-block; /* To be able to set width and height. */
     height: 100%;
     width: 100%;
 }
@@ -58,14 +72,15 @@ nav > ul > li:last-child {
 /* LAYOUT - MAIN AND ASIDE CONTENT */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
-/* Flexbox container for the two columns. This class is also used to create the
-   two article columns. */
+/* Flexbox container for columns. This class is used both to separate the
+   index page into left and right columns and to separate the articles into
+   two columns. */
 .column-container {
     display: flex;
 }
 
 /* By default, all direct children of .column-container should have a relative
-   size of 1. */
+   size of 1, i.e. they should be the same size by default. */
 .column-container > * {
     flex: 1;
 }
@@ -121,30 +136,35 @@ article {
 
 /* LAYOUT - FORMS */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Center the form container horizontally on the page. */
 #form-container {
     width: 67%;
     margin: auto;
 }
 
+/* Use a flexbox for the form so it's easy to space it's contents evenly. */
 form {
     display: flex;
     align-items: center;
     justify-content: space-around;
 }
 
+/* Add some spacing between the labels and the input fields. */
 input {
     margin-left: 5px;
 }
 
+/* Add some spacing around the input controls. */
 form {
     padding: 10px;
 }
 
+/* Give the buttons a fixed size. */
 input[type="submit"],
 input[type="reset"] {
-    box-sizing: border-box;
     width: 65px;
     height: 32px;
+    padding: 7px;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
@@ -154,6 +174,8 @@ body > footer {
     text-align: center;
 }
 
+/* Add some spacing around the footer text and some space between the form
+   container and the footer. */
 body > footer {
     padding: 10px 0;
     margin-top: 10px;
@@ -165,6 +187,7 @@ body > footer {
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 /* STYLE - FONTS */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Requirement: All text on the pages should use a sans-serif font family. */
 * {
     font-family: sans-serif;
 }
@@ -172,6 +195,8 @@ body > footer {
 
 /* STYLE - NAVIGATION */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* The "Ipsum" part of the logo is transparent, so fill it in with white so the
+   body background doesn't show through it. */
 body > header > img {
     background-color: #f5f6f4;
 }
@@ -180,18 +205,21 @@ nav {
     background-color: #67b43b;
 }
 
+/* Removes the default dots from the navlinks. */
 nav > ul > li {
     list-style: none;
 }
 
+/* Default style for the navlinks. */
 nav > ul > li > a {
-    transition: 0.3s;
+    transition: 0.3s; /* Transition between the hover and default styles. */
     background-color: #67b43b;
     color: #f5f6f4;
     text-decoration: none;
     font-weight: bold;
 }
 
+/* Hover style for the navlinks. */
 nav > ul > li > a:hover {
     background-color: #f5f6f4;
     color: #67b43b;
@@ -203,6 +231,8 @@ nav > ul > li > a:hover {
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 body {
     background: linear-gradient(#d0dfdf, #f0ffff);
+    /* Do not repeat the gradient if the page is shorter than the screen
+    height. */
     background-repeat: no-repeat;
 }
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
@@ -214,10 +244,13 @@ main {
     background-color: #f5f6f4;
 }
 
+/* Add a border between the paragraphs. */
 article:last-child {
-    border-left: 1px groove silver;
+    border-left: 2px groove silver;
 }
 
+/* Optional feature: The second paragraph of the first article element should
+   be written in bold text, with a blue text color. */
 article:first-child > p:nth-of-type(2) {
     color: blue;
     font-weight: bold;
@@ -231,6 +264,8 @@ aside {
     background-color: #f5f6f4;
 }
 
+/* Optional feature: In the unordered list in the side content, items should
+   appear in alternating colors (green and red, as a suggestion). */
 aside > ul > li:nth-of-type(odd) {
     color: green;
 }
@@ -242,42 +277,51 @@ aside > ul > li:nth-of-type(even) {
 
 /* STYLE - FORMS */
 /* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Requirement: Use a border with rounded corners on the form. */
 form {
     border: 3px double #72c740;
     border-radius: 5px;
 }
 
+/* Requirement: Make the text in the header on the login page show as upper-case
+   letters. */
 #form-container > h2 {
     text-transform: uppercase;
 }
 
+/* Requirement: Change the reset & signing in on the form with nicer shapes and
+   colors that hint at their functionality. */
+
+/* Shared style for buttons. */
 input[type="submit"],
 input[type="reset"] {
-    transition: 0.3s;
+    transition: 0.3s; /* Transition between hover and default styles. */
     border-radius: 5px;
-    padding: 7px;
-    margin: auto;
     font-weight: bold;
     cursor: pointer;
 }
 
-input[type="reset"] {
-    border: 2px solid red;
-    color: #f5f6f4;
-    background-color: red;
-}
-
+/* Default style for submit button. */
 input[type="submit"] {
     border: 2px solid #67b43b;
     color: #f5f6f4;
     background-color: #67b43b;
 }
 
+/* Default style for reset button. */
+input[type="reset"] {
+    border: 2px solid red;
+    color: #f5f6f4;
+    background-color: red;
+}
+
+/* Hover style for submit button. */
 input[type="submit"]:hover {
     color: #67b43b;
     background-color: #f5f6f4;
 }
 
+/* Hover style for reset button. */
 input[type="reset"]:hover {
     color: red;
     background-color: #f5f6f4;
